@@ -46,18 +46,7 @@ public class CoinFlip extends Fragment {
         public void onClick(View v) {
             ImageView imageView = v.findViewById(R.id.coinPlaceholder);
 
-            int randomNumber = random.nextInt(2);
-            int chosenGif;
-            switch (randomNumber) {
-                case 0:
-                    chosenGif = R.drawable.headsflip;
-                    break;
-                case 1:
-                    chosenGif = R.drawable.tailsflip;
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + randomNumber);
-            }
+            int chosenGif = getRandCoinGif();
 
             Glide.with(getContext()).asGif().load(chosenGif).listener(new RequestListener<GifDrawable>() {
                 @Override
@@ -76,4 +65,16 @@ public class CoinFlip extends Fragment {
             .into(imageView);
         }
     };
+
+    private int getRandCoinGif() {
+        int randomNumber = random.nextInt(2);
+        switch (randomNumber) {
+            case 0:
+                return R.drawable.headsflip;
+            case 1:
+                return R.drawable.tailsflip;
+            default:
+                throw new IllegalStateException("Unexpected value: " + randomNumber);
+        }
+    }
 }

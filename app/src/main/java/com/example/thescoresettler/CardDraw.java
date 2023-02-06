@@ -46,168 +46,7 @@ public class CardDraw extends Fragment {
         public void onClick(View v) {
             ImageView imageView = v.findViewById(R.id.cardPlaceholder);
 
-            int randomNumber = random.nextInt(6);
-            int chosenGif;
-            switch (randomNumber) {
-                case 0:
-                    chosenGif = R.drawable.club_1;
-                    break;
-                case 1:
-                    chosenGif = R.drawable.club_2;
-                    break;
-                case 2:
-                    chosenGif = R.drawable.club_3;
-                    break;
-                case 3:
-                    chosenGif = R.drawable.club_4;
-                    break;
-                case 4:
-                    chosenGif = R.drawable.club_5;
-                    break;
-                case 5:
-                    chosenGif = R.drawable.club_6;
-                    break;
-                case 6:
-                    chosenGif = R.drawable.club_7;
-                    break;
-                case 7:
-                    chosenGif = R.drawable.club_8;
-                    break;
-                case 8:
-                    chosenGif = R.drawable.club_9;
-                    break;
-                case 9:
-                    chosenGif = R.drawable.club_10;
-                    break;
-                case 10:
-                    chosenGif = R.drawable.club_11;
-                    break;
-                case 11:
-                    chosenGif = R.drawable.club_12;
-                    break;
-                case 12:
-                    chosenGif = R.drawable.club_13;
-                    break;
-                case 13:
-                    chosenGif = R.drawable.diamond_1;
-                    break;
-                case 14:
-                    chosenGif = R.drawable.diamond_2;
-                    break;
-                case 15:
-                    chosenGif = R.drawable.diamond_3;
-                    break;
-                case 16:
-                    chosenGif = R.drawable.diamond_4;
-                    break;
-                case 17:
-                    chosenGif = R.drawable.diamond_5;
-                    break;
-                case 18:
-                    chosenGif = R.drawable.diamond_6;
-                    break;
-                case 19:
-                    chosenGif = R.drawable.diamond_7;
-                    break;
-                case 20:
-                    chosenGif = R.drawable.diamond_8;
-                    break;
-                case 21:
-                    chosenGif = R.drawable.diamond_9;
-                    break;
-                case 22:
-                    chosenGif = R.drawable.diamond_10;
-                    break;
-                case 23:
-                    chosenGif = R.drawable.diamond_11;
-                    break;
-                case 24:
-                    chosenGif = R.drawable.diamond_12;
-                    break;
-                case 25:
-                    chosenGif = R.drawable.diamond_13;
-                    break;
-                case 26:
-                    chosenGif = R.drawable.heart_1;
-                    break;
-                case 27:
-                    chosenGif = R.drawable.heart_2;
-                    break;
-                case 28:
-                    chosenGif = R.drawable.heart_3;
-                    break;
-                case 29:
-                    chosenGif = R.drawable.heart_4;
-                    break;
-                case 30:
-                    chosenGif = R.drawable.heart_5;
-                    break;
-                case 31:
-                    chosenGif = R.drawable.heart_6;
-                    break;
-                case 32:
-                    chosenGif = R.drawable.heart_7;
-                    break;
-                case 33:
-                    chosenGif = R.drawable.heart_8;
-                    break;
-                case 34:
-                    chosenGif = R.drawable.heart_9;
-                    break;
-                case 35:
-                    chosenGif = R.drawable.heart_10;
-                    break;
-                case 36:
-                    chosenGif = R.drawable.heart_11;
-                    break;
-                case 37:
-                    chosenGif = R.drawable.heart_12;
-                    break;
-                case 38:
-                    chosenGif = R.drawable.heart_13;
-                    break;
-                case 39:
-                    chosenGif = R.drawable.spade_1;
-                    break;
-                case 40:
-                    chosenGif = R.drawable.spade_2;
-                    break;
-                case 41:
-                    chosenGif = R.drawable.spade_3;
-                    break;
-                case 42:
-                    chosenGif = R.drawable.spade_4;
-                    break;
-                case 43:
-                    chosenGif = R.drawable.spade_5;
-                    break;
-                case 44:
-                    chosenGif = R.drawable.spade_6;
-                    break;
-                case 45:
-                    chosenGif = R.drawable.spade_7;
-                    break;
-                case 46:
-                    chosenGif = R.drawable.spade_8;
-                    break;
-                case 47:
-                    chosenGif = R.drawable.spade_9;
-                    break;
-                case 48:
-                    chosenGif = R.drawable.spade_10;
-                    break;
-                case 49:
-                    chosenGif = R.drawable.spade_11;
-                    break;
-                case 50:
-                    chosenGif = R.drawable.spade_12;
-                    break;
-                case 51:
-                    chosenGif = R.drawable.spade_13;
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + randomNumber);
-            }
+            int chosenGif = getRandCardGif();
 
             Glide.with(getContext()).asGif().load(chosenGif).listener(new RequestListener<GifDrawable>() {
                 @Override
@@ -226,4 +65,116 @@ public class CardDraw extends Fragment {
             .into(imageView);
         }
     };
+
+    private int getRandCardGif() {
+        int randomNumber = random.nextInt(52);
+        switch (randomNumber) {
+            case 0:
+                return R.drawable.club_1;
+            case 1:
+                return R.drawable.club_2;
+            case 2:
+                return R.drawable.club_3;
+            case 3:
+                return R.drawable.club_4;
+            case 4:
+                return R.drawable.club_5;
+            case 5:
+                return R.drawable.club_6;
+            case 6:
+                return R.drawable.club_7;
+            case 7:
+                return R.drawable.club_8;
+            case 8:
+                return R.drawable.club_9;
+            case 9:
+                return R.drawable.club_10;
+            case 10:
+                return R.drawable.club_11;
+            case 11:
+                return R.drawable.club_12;
+            case 12:
+                return R.drawable.club_13;
+            case 13:
+                return R.drawable.diamond_1;
+            case 14:
+                return R.drawable.diamond_2;
+            case 15:
+                return R.drawable.diamond_3;
+            case 16:
+                return R.drawable.diamond_4;
+            case 17:
+                return R.drawable.diamond_5;
+            case 18:
+                return R.drawable.diamond_6;
+            case 19:
+                return R.drawable.diamond_7;
+            case 20:
+                return R.drawable.diamond_8;
+            case 21:
+                return R.drawable.diamond_9;
+            case 22:
+                return R.drawable.diamond_10;
+            case 23:
+                return R.drawable.diamond_11;
+            case 24:
+                return R.drawable.diamond_12;
+            case 25:
+                return R.drawable.diamond_13;
+            case 26:
+                return R.drawable.heart_1;
+            case 27:
+                return R.drawable.heart_2;
+            case 28:
+                return R.drawable.heart_3;
+            case 29:
+                return R.drawable.heart_4;
+            case 30:
+                return R.drawable.heart_5;
+            case 31:
+                return R.drawable.heart_6;
+            case 32:
+                return R.drawable.heart_7;
+            case 33:
+                return R.drawable.heart_8;
+            case 34:
+                return R.drawable.heart_9;
+            case 35:
+                return R.drawable.heart_10;
+            case 36:
+                return R.drawable.heart_11;
+            case 37:
+                return R.drawable.heart_12;
+            case 38:
+                return R.drawable.heart_13;
+            case 39:
+                return R.drawable.spade_1;
+            case 40:
+                return R.drawable.spade_2;
+            case 41:
+                return R.drawable.spade_3;
+            case 42:
+                return R.drawable.spade_4;
+            case 43:
+                return R.drawable.spade_5;
+            case 44:
+                return R.drawable.spade_6;
+            case 45:
+                return R.drawable.spade_7;
+            case 46:
+                return R.drawable.spade_8;
+            case 47:
+                return R.drawable.spade_9;
+            case 48:
+                return R.drawable.spade_10;
+            case 49:
+                return R.drawable.spade_11;
+            case 50:
+                return R.drawable.spade_12;
+            case 51:
+                return R.drawable.spade_13;
+            default:
+                throw new IllegalStateException("Unexpected value: " + randomNumber);
+        }
+    }
 }

@@ -46,30 +46,7 @@ public class DieRoll extends Fragment {
         public void onClick(View v) {
             ImageView imageView = v.findViewById(R.id.diePlaceholder);
 
-            int randomNumber = random.nextInt(6);
-            int chosenGif;
-            switch (randomNumber) {
-                case 0:
-                    chosenGif = R.drawable.dice_1;
-                    break;
-                case 1:
-                    chosenGif = R.drawable.dice_2;
-                    break;
-                case 2:
-                    chosenGif = R.drawable.dice_3;
-                    break;
-                case 3:
-                    chosenGif = R.drawable.dice_4;
-                    break;
-                case 4:
-                    chosenGif = R.drawable.dice_5;
-                    break;
-                case 5:
-                    chosenGif = R.drawable.dice_6;
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + randomNumber);
-            }
+            int chosenGif = getRandDiceGif();
 
             Glide.with(getContext()).asGif().load(chosenGif).listener(new RequestListener<GifDrawable>() {
                 @Override
@@ -88,4 +65,24 @@ public class DieRoll extends Fragment {
             .into(imageView);
         }
     };
+
+    private int getRandDiceGif() {
+        int randomNumber = random.nextInt(6);
+        switch (randomNumber) {
+            case 0:
+                return R.drawable.dice_1;
+            case 1:
+                return R.drawable.dice_2;
+            case 2:
+                return R.drawable.dice_3;
+            case 3:
+                return R.drawable.dice_4;
+            case 4:
+                return R.drawable.dice_5;
+            case 5:
+                return R.drawable.dice_6;
+            default:
+                throw new IllegalStateException("Unexpected value: " + randomNumber);
+        }
+    }
 }

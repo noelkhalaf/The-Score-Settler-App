@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.rangeButton:
                 changeMargin(range_button, R.id.rangeButton);
+                changeFragment(new RangeNum());
                 break;
             case R.id.coinButton:
                 changeMargin(coin_button, R.id.coinButton);
