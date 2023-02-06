@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">The Score Settler</string>
+    <string name="logo">Home logo</string>
+    <string name="coin_placeholder">Flipping coin</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
